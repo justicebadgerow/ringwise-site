@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inspection Brief | Ringwise</title>
+<meta name="description" content="A weekly list of the food businesses in your county that health inspectors just cited for pests, with the inspector's exact words. For commercial pest control companies in North Carolina.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5e57'/%3E%3Cpath d='M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='38' r='9' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10201e; --muted:#4f5f5c; --line:#dfe7e5; --bg:#ffffff; --soft:#f3f8f7;
+    --brand:#0f5e57; --brand-2:#13786f; --accent:#f2b33d; --radius:14px;
+    --p1:#b3261e; --p1-bg:#fbe9e7; --p2:#8a5a00; --p2-bg:#fff3d6; --p3:#4f5f5c; --p3-bg:#eef1f4;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  a{color:var(--brand)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2rem,4.6vw,3.1rem);letter-spacing:-.01em}
+  h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem)}
+  h3{font-size:1.1rem}
+  p{margin:0 0 1em}
+  .muted{color:var(--muted)}
+  .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-2);transform:translateY(-1px)}
+  .btn-ghost{border:1.5px solid var(--brand);color:var(--brand)}
+  .btn-ghost:hover{background:var(--soft)}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none}
+  .logo svg{width:30px;height:30px}
+  .logo small{font-weight:500;color:var(--muted);font-size:.9rem}
+  .nav .links{display:flex;gap:22px;align-items:center}
+  .nav .links a.plain{color:var(--muted);text-decoration:none;font-size:.95rem}
+  .nav .links a.mail{font-weight:600;text-decoration:none}
+  @media(max-width:720px){.nav .links a.plain{display:none}.logo small{display:none}}
+
+  .hero{padding:72px 0 56px;background:linear-gradient(180deg,var(--soft),#fff)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-block;background:#e4f1ef;color:var(--brand);font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:34em}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:48px}}
+
+  .lead-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 40px -20px rgba(15,94,87,.35)}
+  .lead-card .meta{font-size:.82rem;color:var(--muted);margin-bottom:10px}
+  .lead-card h3{margin-bottom:4px}
+  .quote{background:var(--soft);border-left:3px solid var(--brand);border-radius:0 12px 12px 0;padding:12px 14px;margin:12px 0;font-size:.95rem}
+  .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--p3-bg);color:var(--p3)}
+  .tag.p1{background:var(--p1-bg);color:var(--p1)}
+  .tag.p2{background:var(--p2-bg);color:var(--p2)}
+  .opener{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;font-size:.88rem;color:var(--muted)}
+  .opener strong{color:var(--ink)}
+
+  section{padding:72px 0}
+  .alt{background:var(--soft)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.grid-3{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .num{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
+  .section-head{max-width:680px;margin-bottom:34px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:2rem;line-height:1.1}
+  .stat span{color:var(--muted);font-size:.92rem}
+  @media(max-width:860px){.stats{grid-template-columns:1fr 1fr}}
+
+  .rows{display:grid;gap:12px;margin-top:26px}
+  .row{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
+  .row .who{font-size:.9rem;color:var(--muted)}
+  .row .who b{display:block;color:var(--ink);font-size:.98rem}
+  .row q{quotes:"\201C" "\201D"}
+  @media(max-width:700px){.row{grid-template-columns:1fr;gap:8px}}
+
+  .offer{background:var(--brand);color:#fff;border-radius:22px;padding:40px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
+  .offer h2{color:#fff}
+  .offer ul{margin:0;padding-left:1.1em}
+  .offer li{margin:.35em 0}
+  .offer .btn-primary{background:#fff;color:var(--brand)}
+  .offer .btn-primary:hover{background:#eef6f5}
+  .price{font-family:Fraunces,Georgia,serif;font-size:2.4rem;line-height:1}
+  .price small{font-family:Inter,sans-serif;font-size:1rem;font-weight:500;opacity:.85}
+  @media(max-width:860px){.offer{grid-template-columns:1fr;padding:28px}}
+
+  .about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+  .avatar{width:96px;height:96px;border-radius:50%;background:#e4f1ef;display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:2rem;color:var(--brand)}
+  @media(max-width:600px){.about{grid-template-columns:1fr}}
+
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--brand);font-weight:700}
+  details[open] summary::after{content:"\2013"}
+  details p{margin:.8em 0 0;color:var(--muted)}
+
+  .contact{text-align:center}
+  .contact .big{font-size:clamp(1.3rem,3.6vw,1.9rem);font-weight:700;text-decoration:none;color:var(--ink);display:inline-block;margin:6px 0;word-break:break-word}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer p{margin:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Ringwise Inspection Brief">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f5e57"/><path d="M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="32" cy="38" r="9" fill="#fff"/></svg>
+      Ringwise <small>Inspection Brief</small>
+    </a>
+    <div class="links">
+      <a class="plain" href="#sample">Sample</a>
+      <a class="plain" href="#how">How it works</a>
+      <a class="plain" href="#price">Price</a>
+      <a class="mail" href="mailto:justice@meetringwise.com?subject=Send%20me%20my%20county%27s%20list">Get your list</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">For commercial pest control in North Carolina</span>
+      <h1>Every restaurant in your county that was just cited for pests.</h1>
+      <p class="lead">Each week we read the new health inspections on the state's public portal and pull out the ones where the inspector cited pests. You get the business, the address, the date, and the inspector's exact words.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:justice@meetringwise.com?subject=Send%20me%20my%20county%27s%20list&body=County%20or%20counties%20we%20serve%3A%20">Get your county's list free</a>
+        <a class="btn btn-ghost" href="#sample">See a sample</a>
+      </div>
+      <p class="muted" style="margin-top:14px;font-size:.95rem">The first list covers the last 30 days. No card, no call.</p>
+    </div>
+    <div class="lead-card" aria-label="Example lead from a brief">
+      <div class="meta">Priority 1 · inspected Oct 15, 2026 · score 87</div>
+      <h3>Restaurant, Jacksonville</h3>
+      <div class="tags"><span class="tag p1">Roaches seen</span><span class="tag">Repeat violation</span><span class="tag">Provider already in place</span></div>
+      <div class="quote">"Observed live German roaches in bottom of prep cooler and at hand sink near drink station."</div>
+      <div class="opener"><strong>Suggested opener:</strong> Your Oct 15 inspection recorded live German roaches in the prep cooler and at the hand sink, marked as a repeat. Could I walk the kitchen with you this week?</div>
+    </div>
+  </div>
+</section>
+
+<section id="sample">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>One real month in one county</h2>
+      <p class="muted">Onslow County, Oct 13 to Nov 12, 2026. These are counts from the public record, not estimates.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>122</b><span>food-service inspections posted</span></div>
+      <div class="stat"><b>32</b><span>cited under the pest item</span></div>
+      <div class="stat"><b>8</b><span>where the inspector saw roaches</span></div>
+      <div class="stat"><b>14</b><span>marked as repeat violations</span></div>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div class="who"><b>Restaurant</b>Jacksonville · Oct 30<br><span class="tag p2">Flies seen</span></div>
+        <div><q>PIC stated that pest servicer services facility once per month. Recommended increasing pest servicing to once every two weeks until fly population is controlled.</q></div>
+      </div>
+      <div class="row">
+        <div class="who"><b>Institutional kitchen</b>Swansboro · Oct 23<br><span class="tag p1">Roaches seen</span></div>
+        <div><q>Observed live and dead roaches near the dishmachine, establishment has a current pest control servicer that routinely visits the property.</q></div>
+      </div>
+      <div class="row">
+        <div class="who"><b>Restaurant</b>Jacksonville · Oct 28<br><span class="tag">Entry point</span></div>
+        <div><q>Exit door from kitchen has large gap under the door, please ensure gaps are sealed with an appropriate door sweep to deter the possibility of pest entry.</q></div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:18px;font-size:.95rem">Business names are left off this page. Your list has the name, street address and a link to the original record for every row.</p>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p class="muted">You don't log in to anything. The brief arrives as an email with a spreadsheet.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Tell us your counties</h3>
+        <p class="muted">Reply with the county or counties you serve. That's the whole setup.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>Get the last 30 days free</h3>
+        <p class="muted">Every food business cited under the pest item, sorted so roaches and repeat violations come first.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Then every Monday</h3>
+        <p class="muted">That week's new citations, with a note on whether a pest company is already on the account and a suggested opening line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="offer">
+      <div>
+        <h2>Now taking founding companies</h2>
+        <p>The brief is new. The first 10 companies get:</p>
+        <ul>
+          <li>The founding rate, kept for as long as you stay</li>
+          <li>Month to month, cancel with one email</li>
+          <li>No more than three pest companies per county</li>
+        </ul>
+      </div>
+      <div style="text-align:center">
+        <div class="price">$99 <small>/ month</small></div>
+        <p style="margin:.4em 0 1.2em;opacity:.9">Founding rate. $149 after the first 10.</p>
+        <a class="btn btn-primary" href="mailto:justice@meetringwise.com?subject=Send%20me%20my%20county%27s%20list&body=County%20or%20counties%20we%20serve%3A%20">Start with the free list</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap about">
+    <div class="avatar" aria-hidden="true">J</div>
+    <div>
+      <h2>Hi, I'm Justice</h2>
+      <p>I'm in Jacksonville, NC. County health inspectors write down exactly what they see in every kitchen, and those reports are public. Reading thousands of them every month isn't a job a sales team has time for, so I do the reading and sort them for the people who fix the problem.</p>
+      <p>The brief is just getting started, so you'll deal with me directly. If a list is missing something your team needs, tell me and I'll change it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:780px">
+    <h2>Questions</h2>
+    <details>
+      <summary>Where does this come from?</summary>
+      <p>County health departments in North Carolina post their inspection reports on a public state portal. We read those reports every week. Every row in your list links to the original record so your team can check it before they call.</p>
+    </details>
+    <details>
+      <summary>Are the quotes edited?</summary>
+      <p>No. The inspector's comment is copied exactly as written. We add the sorting, the flags and a suggested opening line, and those are labeled as ours.</p>
+    </details>
+    <details>
+      <summary>Most of these places already have a pest company. Why call them?</summary>
+      <p>Because the record shows the current service isn't holding. The brief flags repeat violations and the cases where the inspector asked for more frequent treatment. Those are the accounts most likely to listen.</p>
+    </details>
+    <details>
+      <summary>Is a citation proof of an active problem?</summary>
+      <p>It's a record of what the inspector saw on that date. Some issues are fixed the same day. Open the linked record before you reach out, and quote it accurately.</p>
+    </details>
+    <details>
+      <summary>Which counties do you cover?</summary>
+      <p>North Carolina counties that post to the state's public inspection portal. Tell us where you work and we'll confirm before you pay anything.</p>
+    </details>
+    <details>
+      <summary>Are you connected to the health department?</summary>
+      <p>No. Ringwise is an independent business. We read public records and have no relationship with any health department or restaurant.</p>
+    </details>
+  </div>
+</section>
+
+<section class="contact alt" id="contact">
+  <div class="wrap">
+    <h2>Get your county's list</h2>
+    <p class="muted">Send one email with the counties you serve. The last 30 days come back free.</p>
+    <a class="big" href="mailto:justice@meetringwise.com?subject=Send%20me%20my%20county%27s%20list&body=County%20or%20counties%20we%20serve%3A%20">justice@meetringwise.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Ringwise · 1250 Western Blvd, Ste L2 #421, Jacksonville, NC 28546</p>
+    <p>Independent. Not affiliated with any health department.</p>
+  </div>
+</footer>
+
+</body>
+</html>

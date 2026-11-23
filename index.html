@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ringwise | AI receptionist for dental practices</title>
+<meta name="description" content="Ringwise answers your dental practice's calls when the front desk can't: after hours, at lunch, and on days you're closed. It books new patients or sends their info to your team. Done for you.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5e57'/%3E%3Cpath d='M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='38' r='9' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10201e; --muted:#4f5f5c; --line:#dfe7e5; --bg:#ffffff; --soft:#f3f8f7;
+    --brand:#0f5e57; --brand-2:#13786f; --accent:#f2b33d; --radius:14px;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  a{color:var(--brand)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(2.1rem,5vw,3.3rem);letter-spacing:-.01em}
+  h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem)}
+  h3{font-size:1.1rem}
+  p{margin:0 0 1em}
+  .muted{color:var(--muted)}
+  .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-2);transform:translateY(-1px)}
+  .btn-ghost{border:1.5px solid var(--brand);color:var(--brand)}
+  .btn-ghost:hover{background:var(--soft)}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none}
+  .logo svg{width:30px;height:30px}
+  .nav a.call{font-weight:600;text-decoration:none}
+  .nav .links{display:flex;gap:22px;align-items:center}
+  .nav .links a.plain{color:var(--muted);text-decoration:none;font-size:.95rem}
+  @media(max-width:720px){.nav .links a.plain{display:none}}
+
+  .hero{padding:72px 0 56px;background:linear-gradient(180deg,var(--soft),#fff)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-block;background:#e4f1ef;color:var(--brand);font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:34em}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .phone-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 40px -20px rgba(15,94,87,.35)}
+  .phone-card .time{font-size:.8rem;color:var(--muted);margin-bottom:10px}
+  .bubble{padding:11px 14px;border-radius:14px;margin:8px 0;font-size:.95rem;max-width:92%}
+  .bubble.caller{background:var(--soft)}
+  .bubble.ai{background:var(--brand);color:#fff;margin-left:auto}
+  .sms{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;font-size:.88rem;color:var(--muted)}
+  .sms strong{color:var(--ink)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:48px}}
+
+  section{padding:72px 0}
+  .alt{background:var(--soft)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .num{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
+  .icon{width:40px;height:40px;border-radius:10px;background:#e4f1ef;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .icon svg{width:22px;height:22px;stroke:var(--brand)}
+  .section-head{max-width:640px;margin-bottom:34px}
+
+  .moments{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .moment{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600}
+  .moment span{display:block;font-weight:400;color:var(--muted);font-size:.9rem}
+  @media(max-width:860px){.moments{grid-template-columns:1fr 1fr}}
+
+  .offer{background:var(--brand);color:#fff;border-radius:22px;padding:40px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}
+  .offer h2{color:#fff}
+  .offer ul{margin:0;padding-left:1.1em}
+  .offer li{margin:.35em 0}
+  .offer .btn-primary{background:#fff;color:var(--brand)}
+  .offer .btn-primary:hover{background:#eef6f5}
+  @media(max-width:860px){.offer{grid-template-columns:1fr;padding:28px}}
+
+  .about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+  .avatar{width:96px;height:96px;border-radius:50%;background:#e4f1ef;display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:2rem;color:var(--brand)}
+  @media(max-width:600px){.about{grid-template-columns:1fr}}
+
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";float:right;color:var(--brand);font-weight:700}
+  details[open] summary::after{content:"–"}
+  details p{margin:.8em 0 0;color:var(--muted)}
+
+  .contact{text-align:center}
+  .contact .big{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;text-decoration:none;color:var(--ink);display:inline-block;margin:6px 0}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Ringwise home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f5e57"/><path d="M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="32" cy="38" r="9" fill="#fff"/></svg>
+      Ringwise
+    </a>
+    <div class="links">
+      <a class="plain" href="#how">How it works</a>
+      <a class="plain" href="#faq">FAQ</a>
+      <a class="call" href="tel:+19285035161">928-503-5161</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">AI receptionist for dental practices</span>
+      <h1>Every new-patient call answered. Even when your front desk can't.</h1>
+      <p class="lead">Ringwise picks up after hours, at lunch, on days you're closed, and when every line is busy. It answers as your practice, books the patient or takes their details, and texts your team right away.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Book a 15-minute call</a>
+        <a class="btn btn-ghost" href="/demo">Try the demo receptionist</a>
+      </div>
+      <p class="muted" style="margin-top:14px;font-size:.95rem">Call our demo receptionist anytime: <a href="tel:+19108308639" style="font-weight:600">(910) 830-8639</a></p>
+    </div>
+    <div class="phone-card" aria-label="Example call">
+      <div class="time">Friday, 6:42 pm · office closed</div>
+      <div class="bubble caller">Hi, I just moved here and I'm looking for a new dentist. Are you taking new patients?</div>
+      <div class="bubble ai">We are! I can get you set up. Can I grab your name and the best number to reach you?</div>
+      <div class="bubble caller">Sure, it's Maria. And I've had a toothache since yesterday.</div>
+      <div class="bubble ai">I'm sorry, Maria. I'll flag that for the team so they reach out first thing Monday morning.</div>
+      <div class="sms"><strong>Text to your team:</strong> New patient · toothache since Thu · wants first available · callback number saved</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The calls that slip through</h2>
+      <p class="muted">Most new patients who hit voicemail don't leave a message. They call the next practice on the list. These are the moments Ringwise covers:</p>
+    </div>
+    <div class="moments">
+      <div class="moment">After hours<span>Evenings and early mornings</span></div>
+      <div class="moment">Lunch<span>When the phones go to voicemail</span></div>
+      <div class="moment">Closed days<span>Fridays and weekends</span></div>
+      <div class="moment">Busy lines<span>When the front desk is with a patient</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p class="muted">Fully done for you. You don't have to learn new software or change how your office runs.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>We learn your practice</h3>
+        <p class="muted">Your hours, services, insurance you take, how you greet patients, and what counts as an emergency. Ringwise is set up to sound like your office.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>It answers when you can't</h3>
+        <p class="muted">Calls forward to Ringwise only when your team doesn't pick up, or during the hours you choose. Your front desk stays in charge.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>Your team gets every lead</h3>
+        <p class="muted">Each call ends with a booked appointment or a clear text summary: who called, why, and how to reach them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Two ways to run it</h2>
+      <p class="muted">You decide how much Ringwise handles.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div>
+        <h3>Book appointments</h3>
+        <p class="muted">Ringwise books new patients straight into open slots you've set aside, so they're on the schedule before they hang up.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Capture and text</h3>
+        <p class="muted">Prefer to keep full control of your schedule? Ringwise takes the patient's details and texts them to your team, so you can call back first thing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="offer">
+      <div>
+        <h2>Now taking founding practices</h2>
+        <p>Ringwise is just launching in North Carolina. The first few practices get:</p>
+        <ul>
+          <li>A lower founding rate, locked in</li>
+          <li>Setup and tuning done personally by the founder</li>
+          <li>A demo that answers as <em>your</em> practice before you decide</li>
+        </ul>
+      </div>
+      <div style="text-align:center">
+        <a class="btn btn-primary" href="#contact">Book a 15-minute call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about">
+    <div class="avatar" aria-hidden="true">J</div>
+    <div>
+      <h2>Hi, I'm Justice</h2>
+      <p>I started Ringwise in Jacksonville, NC, after seeing how many dental offices send calls to voicemail at lunch, after hours, and on Fridays. Every one of those is a patient who might book somewhere else.</p>
+      <p>I'm just getting started, so you'll work with me directly. I set everything up, listen to how your calls are going, and adjust until it sounds right for your office.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap" style="max-width:780px">
+    <h2>Questions</h2>
+    <details>
+      <summary>Does this replace my front desk?</summary>
+      <p>No. It's for the calls your team can't physically get to. Your front desk keeps answering like they always have.</p>
+    </details>
+    <details>
+      <summary>What if we want to control our own schedule?</summary>
+      <p>Use capture-and-text mode. Ringwise doesn't book anything. It takes the caller's details and texts your team.</p>
+    </details>
+    <details>
+      <summary>Will it sound like a robot?</summary>
+      <p>It sounds natural and answers with your practice name and your details. The best way to judge is to hear it, which is why we start with a demo.</p>
+    </details>
+    <details>
+      <summary>What about patient privacy?</summary>
+      <p>We'll walk through exactly how call information is handled and stored on our call, before anything goes live.</p>
+    </details>
+    <details>
+      <summary>Do we have to change our phone system?</summary>
+      <p>Usually not. In most cases your existing line forwards unanswered calls to Ringwise. We'll check how your phones are set up on the call.</p>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk for 15 minutes</h2>
+    <p class="muted">Call or text, or send an email. I'll show you what it would sound like answering for your practice. Want to hear it first? Call the demo line at <a href="tel:+19108308639">(910) 830-8639</a>.</p>
+    <a class="big" href="tel:+19285035161">928-503-5161</a><br>
+    <a href="mailto:justice@meetringwise.com?subject=15-minute%20call%20about%20Ringwise">justice@meetringwise.com</a>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="tel:+19285035161">Call now</a>
+      <a class="btn btn-ghost" href="sms:+19285035161">Send a text</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ringwise · Jacksonville, North Carolina</span>
+    <span><a href="mailto:justice@meetringwise.com">justice@meetringwise.com</a> · <a href="tel:+19285035161">928-503-5161</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

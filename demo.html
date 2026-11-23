@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try the Demo Receptionist | Ringwise</title>
+<meta name="description" content="Listen to Ringwise answer an after-hours call for a dental practice: a new patient with a toothache, captured and sent to the team.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5e57'/%3E%3Cpath d='M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12' stroke='%23fff' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='38' r='9' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#10201e;--muted:#4f5f5c;--line:#dfe7e5;--bg:#fff;--soft:#f3f8f7;--brand:#0f5e57;--brand-2:#13786f;--max:820px}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  a{color:var(--brand)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2;margin:0 0 .5em}
+  h1{font-size:clamp(2rem,5vw,2.8rem)}
+  h2{font-size:1.4rem}
+  .muted{color:var(--muted)}
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none}
+  .logo svg{width:30px;height:30px}
+  .call{font-weight:600;text-decoration:none}
+  .hero{padding:56px 0 24px;background:linear-gradient(180deg,var(--soft),#fff)}
+  .player{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:24px 0 8px;box-shadow:0 18px 40px -24px rgba(15,94,87,.35)}
+  .player .label{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+  audio{width:100%}
+  .bignum{display:inline-block;font-size:clamp(1.8rem,6vw,2.4rem);font-weight:700;color:var(--brand);text-decoration:none;font-variant-numeric:tabular-nums}
+  .demo-line{border-color:var(--brand)}
+  .note{font-size:.85rem;color:var(--muted)}
+  section{padding:32px 0}
+  .summary{background:var(--soft);border-radius:14px;padding:20px}
+  .summary dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
+  .summary dt{color:var(--muted);font-size:.9rem}
+  .summary dd{margin:0;font-weight:500}
+  .t{display:grid;gap:10px}
+  .line{display:grid;grid-template-columns:72px 1fr;gap:12px}
+  .who{font-weight:600;font-size:.9rem}
+  .who.ai{color:var(--brand)}
+  .cta{text-align:center;padding:40px 0 56px}
+  .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;background:var(--brand);color:#fff}
+  .btn:hover{background:var(--brand-2)}
+  footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
+  @media(max-width:520px){.line{grid-template-columns:1fr;gap:2px}.summary dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="Ringwise home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f5e57"/><path d="M20 26c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="32" cy="38" r="9" fill="#fff"/></svg>
+      Ringwise
+    </a>
+    <a class="call" href="tel:+19285035161">928-503-5161</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Call it yourself right now</h1>
+    <p class="muted">Pretend you're a patient. Ava answers as "Ringwise Demo Dental," a made-up practice, and knows whether the office is open, at lunch, or closed.</p>
+    <div class="player demo-line">
+      <div class="label">Demo receptionist line · open 24/7</div>
+      <a class="bignum" href="tel:+19108308639">(910) 830-8639</a>
+      <p class="note" style="margin:8px 0 0">Try: "I'm a new patient and I have a toothache," or "Do you take Delta Dental?" Use a made-up name and number. Calls end after 4 minutes.</p>
+    </div>
+
+    <h2 style="margin-top:36px">Or listen to a sample call</h2>
+    <p class="muted">A new patient calls at 5pm, after the office has closed, with a toothache. This is what they hear instead of voicemail.</p>
+    <div class="player">
+      <div class="label">Sample call · 1 min 44 sec</div>
+      <audio controls preload="metadata" src="demo-call.mp3">Your browser can't play this audio. <a href="demo-call.mp3">Download the recording.</a></audio>
+    </div>
+    <p class="note">Recorded test call. "Ringwise Demo Dental" and the caller are made up. For your practice, it answers with your name, hours, doctors, and insurance.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What your team gets right after the call</h2>
+    <div class="summary">
+      <dl>
+        <dt>Caller</dt><dd>Maria Lopez · New patient</dd>
+        <dt>Callback</dt><dd>910-555-0142</dd>
+        <dt>Reason</dt><dd>Toothache, worried it's a cavity</dd>
+        <dt>Urgency</dt><dd>Urgent (no swelling, fever or bleeding)</dd>
+        <dt>Insurance</dt><dd>Delta Dental</dd>
+        <dt>Best time</dt><dd>Any morning</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Transcript</h2>
+    <div class="t">
+      <div class="line"><span class="who ai">Ava</span><span>Thanks for calling Ringwise Demo Dental, this is Ava. Our office is closed right now, but I can help you. Are you a new patient, or have you been in to see us before?</span></div>
+      <div class="line"><span class="who">Caller</span><span>I'm a new patient.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>What are you calling about today?</span></div>
+      <div class="line"><span class="who">Caller</span><span>I have a toothache.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>I'm sorry you're hurting. Are you having trouble breathing or swallowing, spreading swelling, fever with swelling, or bleeding that won't stop?</span></div>
+      <div class="line"><span class="who">Caller</span><span>No, nothing like that, but I'm worried it might be a cavity or something.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>I can't diagnose it, but I'll mark this urgent for the team. What's your full name?</span></div>
+      <div class="line"><span class="who">Caller</span><span>Maria Lopez.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>What's the best callback number for you?</span></div>
+      <div class="line"><span class="who">Caller</span><span>910-555-0142.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>That's 910-555-0142, correct?</span></div>
+      <div class="line"><span class="who">Caller</span><span>Yeah.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>Do you have dental insurance, or no insurance?</span></div>
+      <div class="line"><span class="who">Caller</span><span>Yeah, it's Delta Dental.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>What days and times work best for you to come in?</span></div>
+      <div class="line"><span class="who">Caller</span><span>Any morning.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>I've got that. The team will call you first thing Wednesday to arrange the earliest emergency opening. Is there anything else I can help with?</span></div>
+      <div class="line"><span class="who">Caller</span><span>Well, I wouldn't say it's an emergency, but it hurts.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>I understand. I'll note it as tooth pain and ask the team for the soonest available morning. Is there anything else?</span></div>
+      <div class="line"><span class="who">Caller</span><span>No, it's okay, thank you.</span></div>
+      <div class="line"><span class="who ai">Ava</span><span>Thanks. The team will call you Wednesday morning, and you'll get a text confirming we got your message. Take care.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Want to hear it answer as your practice?</h2>
+    <p class="muted">I'll set up a version with your name, hours and doctors and walk you through it in 15 minutes.</p>
+    <p style="font-size:1.4rem;font-weight:700;margin:12px 0">928-503-5161</p>
+    <p><a href="mailto:justice@meetringwise.com?subject=Demo%20for%20my%20practice">justice@meetringwise.com</a></p>
+    <p><a class="btn" href="tel:+19285035161">Call or text Justice</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Ringwise · Jacksonville, North Carolina</div>
+</footer>
+</body>
+</html>
